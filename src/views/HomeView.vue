@@ -1,67 +1,88 @@
 <template>
   <div class="home">
-    <!-- <h1>This is a home page</h1> -->
     <div class="first-content">
-      <img alt="lisa" class="lisa" src="@/assets/css/images/lisaimg.svg" />
-      <div class="menu">
-        <h1>Start to shopping with us</h1>
-        <hr><p>Let's start with the products can't wait for window shopping</p>
-        <button class="btn">Add to cart</button>
-      </div>
+      <img alt="" class="group" src="@/assets/css/images/homepic/groupshirt.svg" />
     </div>
-
     <div class="second-content">
-      
-      <div class="shirt">
-        <h1>We're focused</h1>
-        <hr><p>We're providing not only shopping,but also</p>
-          <p>suggest for the best outfit with you</p> 
-        <button class="btn">Get started</button>
-      </div>
-      <img alt="tshirt" class="tshirt" src="@/assets/css/images/tshirt.svg" />
+      <h1>Here is what we have for you</h1>
+      <p>Find the best outifit is not a problem anymore.New STYLE & FASHION Start with us</p>
     </div>
-    <div class="bestseller">
-      <h1>Best Seller</h1>
       <div class="column">
-        <div class="item">
-          <div class="details">
-             <h3>Luxurious Jacket</h3>
-              <p>See the beauty of exotic world
-              with the luxurious glasses</p>
-              <h4>Discover Now</h4> <hr>
-              <button class="btn">Add to cart</button>
+        <div class="box1">
+          <img alt="" src="@/assets/css/images/homepic/left_shirt.svg" />
+          <div style="width: 250px; text-align: center;">
+            <h2>Men's shirt</h2>
           </div>
-         <div>
-           <img alt="hoodie" class="hoodie" src="@/assets/css/images/hoodie.svg" />
         </div>
-       </div>
-       <div class="item">
-          <div class="details">
-             <h3>Luxurious Tshirt</h3>
-              <p>See the beauty of exotic world
-              with the luxurious glasses</p>
-              <h4>Discover Now</h4> <hr>
-              <button class="btn">Add to cart</button>
+        <div class="box2">
+          <img alt="" src="@/assets/css/images/homepic/middle_shirt.svg" />
+          <div style="width: 250px; text-align: center;">
+            <h2>Women top</h2>
           </div>
-         <div>
-           <img alt="hoodie" class="hoodie" src="@/assets/css/images/hshirt.svg" />
+          
         </div>
-       </div>
+        <div class="box3">
+          <img alt="" src="@/assets/css/images/homepic/right_shirt.svg" />
+          <div style="width: 250px; text-align: center;">
+            <h2>New Style</h2>
+          </div>
+            
+        </div>
       </div>
+    <div class="last-content">
+        <h1>New Release Product</h1>
     </div>
+    <div class="new">
+        <div class="col">
+          <div class="item">
+            <div>
+             <img alt=""  src="@/assets/css/images/homepic/hoodie.svg" />
+            </div>
+            <div class="details">
+               <h3>white cast</h3>
+                <p>Slim and fit</p>
+                <h3>USD 6</h3> 
+                <button class="btn">Add to cart</button>
+            </div>
+         </div>
+
+         <div class="item">
+            <div>
+             <img alt="" src="@/assets/css/images/homepic/midshirt.svg" />
+            </div>
+            <div class="details">
+               <h3>Tshirt</h3>
+                <p>Oversize</p>
+                <h3>USD 6</h3> 
+                <button class="btn">Add to cart</button>
+            </div>
+         </div>
+         <div class="item">
+            <div>
+             <img alt=""  src="@/assets/css/images/homepic/top.svg" />
+            </div>
+            <div class="details">
+               <h3>Tshirt</h3>
+                <p>Oversize</p>
+                <h3>USD 6</h3> 
+                <button class="btn">Add to cart</button>
+            </div>
+         </div>
+
+        </div>
+      </div>
+
     <div class="footer">
       
         <div class="category">
-          <h3>Join us</h3>
-          <p>started with free account</p>
-          <p>Free coupons</p>
-          <p>Free shipping</p>
+          <h3>Your Style</h3>
+          <img src="@/assets/css/images/footer.svg" alt="footer">
         </div>
         <div class="category">
-          <h3>T shirts</h3>
-          <p>Women clothes</p>
-          <p>Men clothes</p>
-          <p>Baby Glocerries</p>
+          <h3>Join us</h3>
+          <p>Started with free account</p>
+          <p>Free coupons</p>
+          <p>Free Delivery</p>
         </div>
         <div class="category">
           <h3>Contact us</h3>
@@ -82,80 +103,92 @@
 @media (min-width: 1024px) {
   .home {
     min-height: 100vh;
-    /* display: block; */
-    background-color: #E6E5FF;
-    /* align-items: center; */
+    /* width: fit-content; */
   }
   .first-content{
     align-items: center;
     justify-content: center;
-    display: flex;
     padding-top: 100px;
-    justify-content: space-evenly;
   }
   .second-content{
     align-items: center;
-    justify-content: center;
-    display: flex;
-    /* padding-top: 100px; */
-    justify-content: space-evenly;
-  }
-  .menu h1{
-    margin-left: 10px;
-  }
-  .shirt h1{
-    margin-right: 10px;
-  }
-  .btn{
-    /* background-color: aqua; */
-    border: 2px solid #807BFF;
-    background-color: #E6E5FF;
-    color: #807BFF;
-    border-radius: 20px;
-    width: 100px;
-  }
-  .bestseller{
-    margin-left: 100px;
-  }
-  .bestseller hr{
-    width:100px;
-    float: left;
-
+    text-align: center;
   }
   .column {
-    margin-left: 40px;
+    padding-right: 120px;
     display: flex;
     flex-wrap: wrap;
     align-content: stretch;
+    justify-content: space-evenly;
   }
-
-  .column .details{
-    width :200px;
-    height : 250px;
-    background-color: #96DBDB;
-    border: 2px solid #96DBDB;
-    padding-left: 30px;
-    /* margin-left: 50px; */
-    /* margin: 15px; */
-    /* text-align: center; */
+  .column .box1 {
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
   }
-  .item{
-    margin-right: 5px;
-    gap: 4px;
+  .column .box2 {
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
   }
-  .item p{
-    color: aliceblue;
-    /* display: flexbox; */
+  .column .box3 {
+    width: 100px;
+    margin: 10px;
+    padding: 10px;
   }
-  .hoodie{
-    margin-left: -10px;
+  .last-content{
+    width: fit-content;
+    height: 80px;
+    border: 1px solid #F5F5F5;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    margin: auto;
+    padding:auto;
   }
-  .item{
-    display: flex;
-  }
+  
+  .new{
+     padding-top: 50px;
+      margin-left: 100px;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-gap: 10px;
+    }
+    .col {
+      margin-left: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: stretch;
+    }
+  
+    .col .details{
+      width :150px;
+      height : 250px;
+      border-radius: 10px;
+      padding-left: 30px;
+     
+    }
+    .item{
+      margin-right: 5px;
+      height: auto;
+      gap: 4px;
+      display: flex;
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+    .item p{
+      color: gray;
+    }
+    .btn{
+      border: 2px solid black;
+      /* background-color: #E6E5FF; */
+      /* color: #807BFF; */
+      border-radius: 10px;
+      padding: 15px;
+      width: 100px;
+    }
   .footer{
-    width: 99%;
-    background-color: #807BFF ;
+    width: 100%;
+    background-color: #A495FF ;
     margin-top: 30px;
   }
   .footer{

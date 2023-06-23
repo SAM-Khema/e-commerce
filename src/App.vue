@@ -15,8 +15,8 @@ import { RouterLink, RouterView } from 'vue-router'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/product">Product</RouterLink>
-        <RouterLink to="/about">About us</RouterLink>
-        <RouterLink to="/checkout">Contact us</RouterLink>
+        <RouterLink to="/specialoffer">Special Offer</RouterLink>
+        <RouterLink to="/contactus">Contact us</RouterLink>
       </nav>
     </div>
     <div class="search">
@@ -24,6 +24,9 @@ import { RouterLink, RouterView } from 'vue-router'
     </div>
     <div class="cart">
       <img alt="cart" src="@/assets/css/images/cart.svg" />
+    </div>
+    <div class="acc">
+      <img alt="acc" src="@/assets/css/images/acc.svg" />
     </div>
   </header>
 
@@ -35,7 +38,6 @@ header {
   line-height: 1.5;
   width: 100%;
   max-height: 100vh;
-  background-color: #807BFF;
 }
 .logo {
   display: block; 
@@ -78,7 +80,6 @@ nav a:first-of-type {
 
   header .wrapper {
     display: flex;
-    background-color: #807BFF;
     flex-wrap: wrap;
     width:100%;
   }
@@ -93,6 +94,7 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
   .search input[type=text] {
+    background-color: azure;
   float: right;
   padding: 6px;
   border: none;
@@ -102,8 +104,9 @@ nav a:first-of-type {
   }
   .cart{
     margin-top: 20px;
-    /* margin-left: 150px; */
-    /* justify-content: end; */
+  }
+  .acc{
+    margin-top: 20px;
   }
 }
 </style>
