@@ -1,3 +1,7 @@
+My Hosting URL is in repository clothes_shop.github.io
+Hosting URL: https://sam-khema.github.io/clothes_shop.github.io/
+
+
 # E-commerce
 
 This template should help get you started developing with Vue 3 in Vite.
