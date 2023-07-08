@@ -26,7 +26,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <img alt="cart" src="@/assets/css/images/cart.svg" />
     </div>
     <div class="acc">
-      <RouterLink to="/login"><img alt="acc" src="@/assets/css/images/acc.svg" /></RouterLink>
+      <img alt="acc" src="@/assets/css/images/acc.svg" />
       
     </div>
   </header>
