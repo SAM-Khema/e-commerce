@@ -13,7 +13,7 @@ import { RouterLink, RouterView } from 'vue-router'
     </div>
     <div class="wrapper" >
       <nav class="">
-        <RouterLink to="/" class="hover:text-violet-400 active:text-violet-400 ">Home</RouterLink>
+        <RouterLink to="/home" class="hover:text-violet-400 active:text-violet-400 ">Home</RouterLink>
         <RouterLink to="/product" class="hover:text-violet-400 active:text-violet-400 ">Product</RouterLink>
         <RouterLink to="/specialoffer" class="hover:text-violet-400 active:text-violet-400 ">Special Offer</RouterLink>
         <RouterLink to="/contactus" class="hover:text-violet-400 active:text-violet-400 ">Contact us</RouterLink>
