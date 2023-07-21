@@ -17,13 +17,14 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/product" class="hover:text-violet-400 active:text-violet-400 ">Product</RouterLink>
         <RouterLink to="/specialoffer" class="hover:text-violet-400 active:text-violet-400 ">Special Offer</RouterLink>
         <RouterLink to="/contactus" class="hover:text-violet-400 active:text-violet-400 ">Contact us</RouterLink>
+    
       </nav>
     </div>
     <div class="search">
       <input type="text" placeholder="Search..">
     </div>
     <div class="cart">
-      <img alt="cart" src="@/assets/css/images/cart.svg" />
+      <RouterLink to="/cart"><img alt="cart" src="@/assets/css/images/cart.svg" /></RouterLink>
     </div>
     <div class="acc">
       <img alt="acc" src="@/assets/css/images/acc.svg" />

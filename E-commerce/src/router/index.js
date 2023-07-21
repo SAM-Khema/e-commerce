@@ -25,6 +25,36 @@ const router = createRouter({
       component: () => import('../views/Products.vue')
     },
     {
+      path: '/Selected/:Sid',
+      name: 'productselect',
+      component: () => import('../views/Selected.vue')
+    },
+    {
+      path: '/cart',
+      name: 'mycart',
+      component: () => import('../views/cart.vue')
+    },
+    {
+      path: '/delivery',
+      name: 'delivery',
+      component: () => import('../views/delivery.vue')
+    },
+    {
+      path: '/payment',
+      name: 'payment',
+      component: () => import('../views/payment.vue')
+    },
+    {
+      path: '/sucessful',
+      name: 'sucessful',
+      component: () => import('../views/sucessful.vue')
+    },
+    {
+      path: '/order',
+      name: 'order',
+      component: () => import('../views/order.vue')
+    },
+    {
       path: '/contactus',
       name: 'contactus',
       component: () => import('../views/Contactus.vue')

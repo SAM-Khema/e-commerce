@@ -15,7 +15,8 @@ const findById = async (id) => {
 }
 
 const findAll = async () => {
-  return await Items.find().populate('category');
+  // return await Items.find().populate('category');
+  return await Items.find();
 }
 
 const create = async (newItem) => {

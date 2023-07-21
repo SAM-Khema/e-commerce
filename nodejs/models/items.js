@@ -13,7 +13,10 @@ var itemsSchema = new mongoose.Schema({
     required: true
   },
   desc: String,
-}, {
+  imageUrl: String,
+  price:String,
+},
+ {
   timestamps: true,
 });
 

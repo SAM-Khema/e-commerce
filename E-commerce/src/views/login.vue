@@ -21,7 +21,7 @@ export default {
           method: "POST",
           headers: {
             "Content-type": "application/json",
-            // Origin: "http://localhost:3000",
+            Origin: "http://localhost:3000",
           },
           body: JSON.stringify({
             email: this.email,

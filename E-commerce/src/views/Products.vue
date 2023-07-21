@@ -1,8 +1,34 @@
 <script>
-import headerVue from '@/components/header.vue';
+import headerVue from '../components/header.vue';
+import categoryApi from "@/libs/apis/category";
+import productApi from "@/libs/apis/product";
+import product from '../libs/apis/product';
 
 export default{
-    components: {headerVue}
+    components: {headerVue} ,
+    data() {
+    return {
+      categories: [],
+      products: [],
+      title: "",
+      categoryId: "",
+      desc: "",
+      price: "",
+      imageUrl: "",
+      selectId: this.$route.params.Sid
+      // formatLable: "Add new",
+      // isonEdit: false,
+    }
+    },
+    methods:{
+        gotoselect(selectId){
+            this.$router.push({name:'productselect',params:{Sid:selectId}})
+        }
+    },
+    async mounted() {
+    this.categories = await categoryApi.all(),
+    this.products = await productApi.all() 
+  },
 }
 </script>
 <template>
@@ -11,110 +37,37 @@ export default{
       <div class="first-part text-3xl font-bold pl-36 pt-4">
         <h1 >Our Product</h1>
       </div>
-      <div class="content">
-        <div class="wrapper">
-          <div class="wrapp">
-            <div>
-             <img alt="shirt" class="shirt" src="@/assets/css/images/product/shirt1.svg"/>
+      <div class="content" v-for="product in products" :key="product._id">
+        <div class="wrapper ">
+          <div class="wrapp ">
+            <div >
+             <img :src="product.imageUrl" class="h-52" />
             </div>
             <div class="details pt-4">
-               <h3 class="font-semibold text-xl">T shirt</h3>
-                <p>New Day Black ME</p>
-                <h3>USD 5</h3> 
+               <h3 class="font-semibold text-xl">{{ product.title }}</h3>
+                <p>{{ product.desc }}</p>
+                <h3>{{ product.price }}</h3> 
                 <br>
-                <button class="btn">Discover</button>
-            </div>
-         </div>
-         <div class="wrapp">
-            <div>
-             <img alt="" class="" src="@/assets/css/images/product/shirt2.svg" />
-            </div>
-            <div class="details pt-4">
-               <h3 class="font-semibold text-xl">Count Your</h3>
-                <p>Start your day with me</p>
-                <h3>USD 7</h3> 
-                <br>
-                <button class="btn">Discover</button>
-            </div>
-         </div>
-         <div class="wrapp">
-            <div>
-             <img alt="hoodie" class="hoodie" src="@/assets/css/images/homepic/hoodie.svg" />
-            </div>
-            <div class="details pt-4">
-               <h3 class="font-semibold text-xl">Hoodie</h3>
-                <p>New world from now</p>
-                <h3>USD 6</h3> 
-                <br>
-                <button class="btn">Discover</button>
-            </div>
-         </div>
-         <div class="wrapp">
-            <div>
-             <img alt="hoodie" class="hoodie" src="@/assets/css/images/Product/shirt4.svg" />
-            </div>
-            <div class="details pt-4">
-               <h3 class="font-semibold text-xl">Make Friend</h3>
-                <p>Make Friend Love me</p>
-                <h3>USD 8</h3> 
-                <br>
-                <button class="btn">Discover</button>
-            </div>
-         </div>
-         <div class="wrapp">
-            <div>
-             <img alt="hoodie" class="hoodie" src="@/assets/css/images/Product/shirt5.svg" />
-            </div>
-            <div class="details pt-4">
-               <h3 class="font-semibold text-xl">Green Cast</h3>
-                <p>New world From now</p>
-                <h3>USD 6</h3> 
-                <br>
-                <button class="btn">Discover</button>
-            </div>
-         </div>
-         <div class="wrapp">
-            <div>
-             <img alt="hoodie" class="hoodie" src="@/assets/css/images/Product/shirt6.svg" />
-            </div>
-            <div class="details pt-4">
-               <h3 class="font-semibold text-xl">Way Kambas Mini Maple</h3>
-                <p>New Start New</p>
-                <h3>USD 8</h3> 
-                <br>
-                <button class="btn">Discover</button>
+                <button type="button" class="btn " @click="gotoselect(product._id)">Discover</button>
             </div>
          </div>
         </div>
       </div>
-
-      <div class="bestseller">
-        <h1 class="first-part text-3xl font-bold pl-36">Best Seller</h1>
+      <h1 class="first-part text-3xl font-bold pl-36">Best Seller</h1>
+      <div class="bestseller flex pl-36 justify-evenly">
         <br>
-        <div class="best">
-          <div class="itm">
+        <div class="best " v-for="product in products.slice(0,2)" :key="product._id">
+          <div class="itm ">
             <div class="details">
-               <h3 class="font-semibold text-xl">Luxurious Jacket</h3>
-                <p>See the beauty of exotic world
-                with the luxurious glasses</p>
-                <h4>Discover Now</h4> <hr>
-                <button class="btn">Add to cart</button>
+               <h3 class="font-semibold text-xl">{{ product.title}}</h3>
+               <br>
+                <p>{{ product.desc }}</p>
+                <!-- <h4>Discover Now</h4> <hr> -->
+                <br>
+                <router-link to="/Selected" type="button" class="btn ">Discover</router-link>
             </div>
            <div>
-             <img alt="shirt" class="hoodie" src="@/assets/css/images/product/best1.svg" />
-          </div>
-         </div>
-
-         <div class="itm">
-            <div class="details">
-               <h3 class="font-semibold text-xl">Luxurious Tshirt</h3>
-                <p>See the beauty of exotic world
-                with the luxurious glasses</p>
-                <h4>Discover Now</h4> <hr>
-                <button class="btn">Add to cart</button>
-            </div>
-           <div>
-             <img alt="shirt" class="hoodie" src="@/assets/css/images/product/hshirt.svg" />
+             <img alt :src="product.imageUrl" class="h-64"/>
           </div>
          </div>
         </div>
@@ -161,9 +114,9 @@ export default{
     .content{
      padding-top: 50px;
       margin-left: 100px;
-      display: grid;
+      display: grid; 
       grid-template-columns: auto auto;
-      grid-gap: 50px;
+      grid-gap: 10px; 
     }
     .wrapper {
       margin-left: 40px;
@@ -174,8 +127,8 @@ export default{
     }
   
     .wrapper .details{
-      width :200px;
-      height : 250px;
+      width :150px;
+      height : 200px;
       border-radius: 10px;
       padding-left: 30px;
      
@@ -197,11 +150,9 @@ export default{
       padding: 15px;
     }
     .best {
-      margin-left: 40px;
-      display: flex;
-      flex-wrap: wrap;
+      margin-left: 10px;
       align-content: stretch;
-      justify-content: space-evenly;
+      justify-content: center;
     }
   
     .best .details{

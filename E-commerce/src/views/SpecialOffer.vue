@@ -23,7 +23,7 @@ export default{
                 <p>USD 10.50</p>
                 <h3>USD 8.00</h3> 
                 <br>
-                <button class="btn">Discover</button>
+                <router-link to="/Selected" type="button" class="btn ">Discover</router-link>
             </div>
          </div>
          <div class="wrapp">
@@ -35,7 +35,7 @@ export default{
                 <p>20% Off</p>
                 <p>USD 11</p>
                 <h3>USD 9</h3> 
-                <button class="btn">Discover</button>
+                <router-link to="/Selected" type="button" class="btn ">Discover</router-link>
             </div>
          </div>
          <div class="wrapp">
@@ -47,7 +47,7 @@ export default{
                 <p>20% off</p>
                 <p>USD 10.50</p> 
                 <h3>USD 8.00</h3>
-                <button class="btn">Discover</button>
+                <router-link to="/Selected" type="button" class="btn ">Discover</router-link>
             </div>
          </div>
          <div class="wrapp">
@@ -60,7 +60,7 @@ export default{
                 <p>USD 10</p>
                 <h3>USD 8</h3> 
                 <br>
-                <button class="btn">Discover</button>
+                <router-link to="/Selected" type="button" class="btn ">Discover</router-link>
             </div>
          </div>
         </div>
@@ -81,7 +81,7 @@ export default{
                 <p>20% Off</p>
                 <p>USD 10.50</p>
                 <h3>USD 8.00</h3> 
-                <button class="btn">Discover</button>
+                <router-link to="/Selected" type="button" class="btn ">Discover</router-link>
             </div>
          </div>
          <div class="wrapp">
@@ -93,7 +93,7 @@ export default{
                 <p>20% off</p>
                 <p>USD 10</p>
                 <h3>USD 8</h3> 
-                <button class="btn">Discover</button>
+                <router-link to="/Selected" type="button" class="btn ">Discover</router-link>
             </div>
          </div>
          <div class="wrapp">
@@ -105,7 +105,7 @@ export default{
                <p>20% off</p>
                 <p>USD 10.5</p>
                 <h3>USD 8</h3> 
-                <button class="btn">Discover</button>
+                <router-link to="/Selected" type="button" class="btn ">Discover</router-link>
             </div>
          </div>
          <div class="wrapp">
@@ -117,7 +117,7 @@ export default{
                <p>20% off</p>
                 <p>USD 10.5</p>
                 <h3>USD 8</h3> 
-                <button class="btn">Discover</button>
+                <router-link to="/Selected" type="button" class="btn ">Discover</router-link>
             </div>
          </div>
         </div>

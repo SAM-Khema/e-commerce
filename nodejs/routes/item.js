@@ -12,8 +12,8 @@ router.get('id/:id', auth.ensureSignedIn, async function (req, res, next) {
 })
 
 router.post('/create', auth.ensureSignedIn, async (req, res, next) => {
-  const { name, desc, category } = req.body;
-  const result = await itemService.create({ name, desc, category })
+  const { name, desc, category, imageUrl,price } = req.body;
+  const result = await itemService.create({ name, desc, category, imageUrl,price })
   res.json(result);
 })
 
