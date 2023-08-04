@@ -16,7 +16,7 @@ export default{
     </div>
     <div class="flex justify-end pr-56 ">
                 <br>
-                <router-link to="/order" type="button" class=" border-2 w-32 items-center h-8 rounded-xl text-center ">Your Order</router-link>
+                <router-link to="/orderspecials type="button" class=" border-2 w-32 items-center h-8 rounded-xl text-center ">Your Order</router-link>
                 <router-link to="/home" type="button" class="ml-8 border-2 w-32 items-center h-8 rounded-xl text-center border-[#6662CC] bg-[#6662CC] text-white">Back Home</router-link>
     </div>
     <FooterView />

@@ -28,7 +28,6 @@ import { RouterLink, RouterView } from 'vue-router'
     </div>
     <div class="acc">
       <img alt="acc" src="@/assets/css/images/acc.svg" />
-      
     </div>
   </header>
 
@@ -54,7 +53,7 @@ nav {
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  color: #8672fe;
 
 }
 

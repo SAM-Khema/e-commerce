@@ -1,10 +1,12 @@
 <script>
-// import headerVue from '../components/header.vue';
+
 import categoryApi from "@/libs/apis/category";
 import productApi from "../libs/apis/product";
-
+import FooterView from '../components/footer.vue';
 export default {
-  // components: {headerVue},
+  components: {
+      FooterView
+    },
   data() {
     return {
       categories: [],
@@ -33,13 +35,16 @@ export default {
 <template>
   <header>
     <div>
-      <img
+    
+        <router-link to="/dashboard"><div class=""><img
         alt="icon"
         class="logo"
         src="@/assets/css/images/icon.svg"
         width="125"
         height="125"
-      />
+      /></div></router-link>
+      
+      
     </div>
     <div class="wrapper">
       <nav class="">
@@ -47,17 +52,17 @@ export default {
           >Home</RouterLink
         >
         <RouterLink
-          to="/product"
+          to="/"
           class="hover:text-violet-400 active:text-violet-400"
           >Product</RouterLink
         >
         <RouterLink
-          to="/specialoffer"
+          to="/"
           class="hover:text-violet-400 active:text-violet-400"
           >Special Offer</RouterLink
         >
         <RouterLink
-          to="/contactus"
+          to="/"
           class="hover:text-violet-400 active:text-violet-400"
           >Contact us</RouterLink
         >
@@ -66,6 +71,7 @@ export default {
     <div class="search">
       <input type="text" placeholder="Search.." />
     </div>
+    
     <div class="acc">
       <RouterLink to="/login"
         ><img
@@ -141,33 +147,7 @@ export default {
       </div>
     </div>
 
-    <div class="footer">
-      <div class="category pt-4">
-        <h3 class="font-bold text-2xl">Your Style</h3>
-        <br />
-        <img src="@/assets/css/images/footer.svg" alt="footer" />
-      </div>
-      <div class="category pt-4">
-        <h3 class="font-bold text-2xl">Join us</h3>
-        <br />
-        <p>Started with free account</p>
-        <p>Free coupons</p>
-        <p>Free Delivery</p>
-      </div>
-      <div class="category pt-4">
-        <h3 class="font-bold text-2xl">Contact us</h3>
-        <br />
-        <p>Tel: 069924123</p>
-        <p>Address Teuk Thla</p>
-        <p>Phnom Penh</p>
-      </div>
-      <div class="category pt-4">
-        <h3 class="font-bold text-2xl">Hire now</h3>
-        <br />
-        <p>Gain Experience</p>
-        <p>Start with us</p>
-      </div>
-    </div>
+    <FooterView />
   </div>
 </template>
 
@@ -292,20 +272,6 @@ nav {
     height: 250px;
     border-radius: 10px;
     padding-left: 30px;
-  }
-
-  .footer {
-    height: 150px;
-    width: 99%;
-    background-color: #a495ff;
-    margin-top: 30px;
-  }
-  .footer {
-    justify-content: space-evenly;
-    margin-left: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: stretch;
   }
 }
 </style>

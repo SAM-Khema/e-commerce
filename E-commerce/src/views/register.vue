@@ -14,7 +14,7 @@ export default {
     async onSubmit(e) {
       e.preventDefault();
       try {
-        const res = await fetch("http://localhost:3001/auth/logout", {
+        const res = await fetch("http://localhost:3001/auth/register", {
           method: "POST",
           headers: {
             "Content-type": "application/json",

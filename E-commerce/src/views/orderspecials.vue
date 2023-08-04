@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 import headerVue from '@/components/header.vue';
 import FooterView from '../components/footer.vue';
 export default{
@@ -8,7 +8,6 @@ export default{
     ,data() {
     return {
       categories: [],
-      products: [],
       items: [],
       title: "",
       categoryId: "",
@@ -21,16 +20,15 @@ export default{
 ,
 methods:{
   callFunction: function () {
+   
    var currentDate = new Date();
    console.log(currentDate);
   }
 },
   async mounted() {
-    this.products = JSON.parse(localStorage.getItem("product") || '[]')
-    console.log(localStorage.product);
-    this.callFunction()
     this.items = JSON.parse(localStorage.getItem("item") || '[]')
     console.log(localStorage.item);
+    this.callFunction()
 },
 }
 </script>
@@ -47,22 +45,15 @@ methods:{
             <th>Item</th>
             <th>Quantity</th>
             <th>Price</th>
-            <!-- <th>Date</th> -->
-        </tr>
-        <tr class="h-48">
-            <td><img alt="" class="h-48" :src="products.imageUrl" /></td>
-            <td>1</td>
-            <td>{{ products.price }}</td>
-           
+            <th>Date</th>
         </tr>
         <tr class="h-48">
             <td><img alt="" class="h-48" :src="items.imageUrl" /></td>
             <td>1</td>
             <td>{{ items.price }}</td>
-            
+            <td> </td>
         </tr>
         </table>
-        
         
     </div>
     <FooterView />
@@ -88,4 +79,4 @@ methods:{
     }
   }
   </style>
-  
+   -->

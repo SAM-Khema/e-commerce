@@ -1,20 +1,55 @@
 <script>
 import headerVue from "@/components/header.vue";
 import productApi from '../libs/apis/product';
+import itemApi from '../libs/apis/item';
+import FooterView from '../components/footer.vue';
 export default {
-  components: { headerVue },
+  components: { headerVue, FooterView},
   data() {
     return {
       selectId: this.$route.params.Sid,
-      products:[]
+      products:[],
+      items:[],
+      quantity: 1,
+      // AddId: this.$route.params.cid,
     };
   },
   methods:{
-    
+     addItemToCart(product){
+      localStorage.setItem("product",JSON.stringify(product));
+      console.log(product);
+      this.$router.push("/cart");
+    },
+    addItemintoCart(item){
+      localStorage.setItem("item",JSON.stringify(item));
+      console.log(item);
+      this.$router.push("/cartspecials");
+    },
+    movetopayment(product){
+      this.$router.push("/payment");
+      localStorage.setItem("product",JSON.stringify(product));
+      console.log(product)
+    },
+    movetopay(item){
+      this.$router.push("/cartspecials");
+      localStorage.setItem("item",JSON.stringify(item));
+      console.log(item)
+    },
+    increment() {
+      this.quantity++
+    },
+    decrement() {
+    if (this.quantity === 1) {
+       alert('Negative quantity not allowed')
+    } else {
+    this.quantity--}
+    },
   },
   async mounted(){
     this.products = await productApi.all();
-  }
+    this.items = await itemApi.all();
+  },
+ 
 };
 </script>
 <template>
@@ -46,6 +81,53 @@ export default {
         <br />
         <label for="quantity" class="font-bold">Quantity:</label>
         <br />
+        <div class="quantity-toggle mt-5 mx-5">
+                <button @click="decrement()" class="rounded-lg ">&minus;</button>
+                  <input type="text" :value="quantity" readonly
+                    class=" text-center num rounded">
+                <button @click="increment()" class="rounded-lg">&plus;</button>
+               </div>
+        <br />
+        <br />
+        <div class="flex">
+          <div>
+            <button type="button" class="border-2 rounded-xl p-4 border-[#6662CC] text-[#6662CC]" @click="addItemToCart(product)">Add to cart</button>
+          </div>
+          <div class="ml-4">
+            <button
+              to=""
+              type="button"
+              class="border-2 rounded-xl p-4 border-[#6662CC] text-[#6662CC]" @click="movetopayment(product)"
+              >Buy now</button
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div v-for="(item,index) in items" :key="index">
+    <div class="selected flex justify-around" v-if="selectId == item._id">
+      <div class="dispic">
+        <br />
+        <img alt="" :src="item.imageUrl" class="h-96" />
+      </div>
+      <div class="disdata pt-11">
+        <h2 class="font-traviraj text-3xl">{{ item.name }}</h2>
+        <h2 class="font-semibold text-3xl">{{ item.price }}</h2>
+        <hr class="bold black" />
+        <br />
+        <p>Fit with all women from 18 to 25</p>
+        <label for="size" class="font-bold">Size:</label>
+        <select name="size" class="font-semibold" id="size">
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+        <br />
+        <br />
+        <label for="quantity" class="font-bold">Quantity:</label>
+        <br />
         <input
           type="text"
           id="quantity"
@@ -57,53 +139,20 @@ export default {
         <br />
         <div class="flex">
           <div>
-            <router-link
-              to="/cart"
-              type="button"
-              class="border-2 rounded-xl p-4 border-[#6662CC] text-[#6662CC]"
-              >Add to cart</router-link
-            >
+            <button type="button" class="border-2 rounded-xl p-4 border-[#6662CC] text-[#6662CC]" @click="addItemintoCart(item)">Add to cart</button>
           </div>
           <div class="ml-4">
-            <router-link
-              to="/Selected"
+            <button
               type="button"
-              class="border-2 rounded-xl p-4 border-[#6662CC] text-[#6662CC]"
-              >Buy now</router-link
-            >
+              class="border-2 rounded-xl p-4 border-[#6662CC] text-[#6662CC]" @click="movetopay(item)"
+              >Buy now</button>
           </div>
         </div>
       </div>
     </div>
 </div>
-    <div class="footer">
-      <div class="category pt-4">
-        <h3 class="font-bold text-2xl">Your Style</h3>
-        <br />
-        <img src="@/assets/css/images/footer.svg" alt="footer" />
-      </div>
-      <div class="category pt-4">
-        <h3 class="font-bold text-2xl">Join us</h3>
-        <br />
-        <p>Started with free account</p>
-        <p>Free coupons</p>
-        <p>Free Delivery</p>
-      </div>
-      <div class="category pt-4">
-        <h3 class="font-bold text-2xl">Contact us</h3>
-        <br />
-        <p>Tel: 069924123</p>
-        <p>Address Teuk Thla</p>
-        <p>Phnom Penh</p>
-      </div>
-      <div class="category pt-4">
-        <h3 class="font-bold text-2xl">Hire now</h3>
-        <br />
-        <p>Gain Experience</p>
-        <p>Start with us</p>
-      </div>
-    </div>
-  </div>
+<FooterView />
+</div>
 </template>
 
 <style>
@@ -111,20 +160,6 @@ export default {
   .selected {
     min-height: 100vh;
     /* display: flex; */
-  }
-
-  .footer {
-    height: 150px;
-    width: 99%;
-    background-color: #807bff;
-    margin-top: 30px;
-  }
-  .footer {
-    justify-content: space-evenly;
-    margin-left: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: stretch;
   }
 }
 </style>

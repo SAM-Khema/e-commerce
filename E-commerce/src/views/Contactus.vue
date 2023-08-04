@@ -1,12 +1,27 @@
 <script>
 import headerVue from '@/components/header.vue';
-
+import FooterView from '../components/footer.vue';
 export default{
-    components: {headerVue}
+    components: {
+      headerVue,
+      FooterView}
 }
 </script>
 <template>
         <headerVue/>
+        <div
+        class="
+          absolute
+          text-white
+        
+          bg-gray-400
+          px-2
+          rounded-md
+          cursor-pointer
+        "
+      >
+        <router-link to="/dashboard"><div class="">Dashboard</div></router-link>
+      </div>
   <div class="contact">
     <div class="container">
       <div class="left" style="width: 50%">
@@ -102,33 +117,7 @@ export default{
                         </div>
                 </div>
         </div>
-    <div class="footer">
-      <div class="category pt-4">
-        <h3 class="font-bold text-2xl">Your Style</h3>
-        <br />
-        <img src="@/assets/css/images/footer.svg" alt="footer" />
-      </div>
-      <div class="category pt-4">
-        <h3 class="font-bold text-2xl">Join us</h3>
-        <br />
-        <p>Started with free account</p>
-        <p>Free coupons</p>
-        <p>Free Delivery</p>
-      </div>
-      <div class="category pt-4">
-        <h3 class="font-bold text-2xl">Contact us</h3>
-        <br />
-        <p>Tel: 069924123</p>
-        <p>Address Teuk Thla</p>
-        <p>Phnom Penh</p>
-      </div>
-      <div class="category pt-4">
-        <h3 class="font-bold text-2xl">Hire now</h3>
-        <br />
-        <p>Gain Experience</p>
-        <p>Start with us</p>
-      </div>
-    </div>
+        <FooterView />
   </div>
 </template>
 
@@ -190,18 +179,6 @@ export default{
     gap: 100px;
     padding-left: 160px;
   }
-  .footer {
-    height: 150px;
-    width: 99%;
-    background-color: #807bff;
-    margin-top: 30px;
-  }
-  .footer {
-    justify-content: space-evenly;
-    margin-left: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: stretch;
-  }
+  
 }
 </style>

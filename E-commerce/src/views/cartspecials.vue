@@ -1,7 +1,6 @@
 <script>
 import headerVue from '@/components/header.vue';
 import FooterView from '../components/footer.vue';
-// import cartApi from "@/libs/apis/cart";
 export default {
   components: {
     headerVue,
@@ -10,10 +9,8 @@ export default {
     data() {
     return {
       categories: [],
-      products: [] ,
-      // AddId: this.$route.params.cid,
+      products: [],
       title: "",
-      carts: [],
       items:[],
       categoryId: "",
       desc: "",
@@ -21,9 +18,8 @@ export default {
       imageUrl: "",
       quantity:1,
     }
-
-  
-},
+}
+,
   methods:{
     increment() {
       this.quantity++
@@ -36,14 +32,10 @@ export default {
     },
     },
   async mounted() {
-    this.products = JSON.parse(localStorage.getItem("product") || '[]')
-    console.log(localStorage.product);
     this.items = JSON.parse(localStorage.getItem("item") || '[]')
     console.log(this.items)
-
   },
 }
-
 
 </script>
 <template>
@@ -53,7 +45,8 @@ export default {
         <h1 >My cart</h1>
     </div>
     <br>
-    <div class="flex justify-evenly "  >
+    <div class="flex justify-evenly ">
+      <!-- v-for="(product,index) in products" :key="index" -->
       <table>
         <tr>
             <th>Item</th>
@@ -63,17 +56,8 @@ export default {
             
         </tr>
         <tr class="h-48 " >
-            <td><img alt="" class="h-48" :src="products.imageUrl" /></td>
-            <!-- <td><img alt="" class="h-48" :src="items.imageUrl" /></td> -->
-            <td>
-               1
-            </td>
-            <td>{{ products.price }}</td>
-            <td><img class="w-12" src="https://static.vecteezy.com/system/resources/thumbnails/003/241/364/small/trash-bin-icon-line-vector.jpg"> </td>
-        </tr>
-        <tr class="h-48 " >
-          
             <td><img alt="" class="h-48" :src="items.imageUrl" /></td>
+            
             <td>
                1
             </td>
@@ -93,7 +77,7 @@ export default {
                       <!-- <h2 class="font-semibold">Total</h2> -->
             </div>
             <div class="value">
-              <h2>{{ products.price }}</h2>
+              <h2>{{ items.price }}</h2>
               <h2>0.0</h2>
               <h2>0.0</h2>
               <br>
@@ -102,10 +86,10 @@ export default {
         <hr>
         <div class="sum flex justify-around">
           <div class="total"><h2 class="font-semibold">Total</h2></div>
-          <div><h2>{{ products.price }}</h2></div>
+          <div><h2>{{ items.price }}</h2></div>
         </div>
         <br>
-        <router-link to="/delivery" type="button" class="ml-8 border-2 w-5/6 items-center h-8 rounded-xl text-center border-[#6662CC] bg-[#6662CC] text-white">pay now</router-link>
+        <router-link to="/deliveryspecials" type="button" class="ml-8 border-2 w-5/6 items-center h-8 rounded-xl text-center border-[#6662CC] bg-[#6662CC] text-white">pay now</router-link>
         </div>
     </div>
        

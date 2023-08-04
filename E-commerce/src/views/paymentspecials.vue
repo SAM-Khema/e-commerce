@@ -9,8 +9,9 @@ export default{
     data() {
     return {
       categories: [],
-      products: [],
+     
       title: "",
+      items: [],
       categoryId: "",
       desc: "",
       price: "",
@@ -21,8 +22,8 @@ export default{
   methods:{
     },
   async mounted() {
-    this.products = JSON.parse(localStorage.getItem("product") || '[]')
-    console.log(localStorage.product);
+    this.items = JSON.parse(localStorage.getItem("item") || '[]')
+    console.log(localStorage.item);
   },
 }
 
@@ -68,7 +69,7 @@ export default{
             </div>   
             <div>
                 <br>
-                <router-link to="/delivery" type="button" class=" border-2 w-32 items-center h-8 rounded-xl text-center ">Cancel Order</router-link>
+                <router-link to="/deliveryspecials" type="button" class=" border-2 w-32 items-center h-8 rounded-xl text-center ">Cancel Order</router-link>
                 <router-link to="/sucessful" type="button" class="ml-2 border-2 w-32 items-center h-8 rounded-xl text-center border-[#6662CC] bg-[#6662CC] text-white">complete Order</router-link>
             </div>
         </form>
@@ -84,7 +85,7 @@ export default{
                       <!-- <h2 class="font-semibold">Total</h2> -->
             </div>
             <div class="value">
-              <h2>{{ products.price }}</h2>
+              <h2>{{ items.price }}</h2>
               <h2>0.0</h2>
               <h2>0.0</h2>
               <br>
@@ -93,7 +94,7 @@ export default{
         <hr>
         <div class="sum flex justify-around">
           <div class="total"><h2 class="font-semibold">Total</h2></div>
-          <div><h2>{{ products.price }}</h2></div>
+          <div><h2>{{ items.price }}</h2></div>
         </div>
         </div>
     </div>
